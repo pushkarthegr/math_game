@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>Math Quiz</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body style="background-color: black;">
+        <h3 id="player1" style="color:white;display:inline-block;margin-left:5px;"></h3>
+        <span id="score1" style="color:white;display:inline-block;font-size:20px;margin-left:5px;">0</span>
+        <br>
+        <h3 id="player2" style="color:white;display:inline-block;margin-left:5px;"></h3>
+        <span id="score2" style="color:white;display:inline-block;font-size:20px;margin-left:5px;">0</span>
+        <br>
+        <div class="container">
+            <center>
+                <h1>Math Quiz</h1>
+                <br>
+                <h3 id="question_turn"></h3>
+                <h3 id="answer_turn"></h3>
+                <br>
+                <div class="col-lg-6" id="output">
+                    <div id="displayer" style="display:none;">
+                        <h2 id="question"></h2>
+                        <br>
+                        <input type="number" id="answer" class="form-control" placeholder="Type your answer">
+                        <br>
+                        <button class="btn btn-warning">Check</button>
+                    </div>
+                </div>
+                <br>
+                <h3 style="color:white;font-size:25px;">Number 1</h3>
+                <input placeholder="Number 1" class="form-control" type="number" id="number_1">
+                <h3 style="color:white;font-size:25px;">Number 2</h3>
+                <input placeholder="Number 2" class="form-control" type="number" id="number_2">
+                <br>
+                <table width="100%">
+                    <tr>
+                        <td><button class="btn btn-primary" onclick="mul()">Multiply</button></td>
+                        <td style="text-align:right;"><button class="btn btn-success" onclick="div()">Division</button></td>
+                    </tr>
+                </table>
+                <br>
+                <table width="100%">
+                    <tr>
+                        <td><button class="btn btn-danger" onclick="add()">Addition</button></td>
+                        <td style="text-align:right;"><button class="btn btn-warning" onclick="sub()">Subtraction</button></td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <script>
+            document.getElementById("player1").innerHTML = localStorage.getItem("math1")+" : ";
+            document.getElementById("player2").innerHTML = localStorage.getItem("math2")+" : ";
+            player_1 = localStorage.getItem("math1");
+            player_2 = localStorage.getItem("math2");
+            score1 = 0;
+            score2 = 0;
+            check = 0;
+            function add(){
+                number1 = Number(document.getElementById("number_1").value);
+                number2 = Number(document.getElementById("number_2").value);
+                if(number1 == ""){
+
+                }else if(number2 == ""){
+
+                }else{
+                    document.getElementById("displayer").style.display="block";
+                    check = number1 + number2;
+                    console.log(check);
+                    document.getElementById("question").innerHTML = number1+" + "+number2;
+                    document.getElementById("number_1").value = "";
+                    document.getElementById("number_2").value = "";
+                }
+            }
+            function sub(){
+                number1 = Number(document.getElementById("number_1").value);
+                number2 = Number(document.getElementById("number_2").value);
+                if(number1 == ""){
+
+                }else if(number2 == ""){
+
+                }else{
+                    document.getElementById("displayer").style.display="block";
+                    check = number1 - number2;
+                    console.log(check);
+                    document.getElementById("question").innerHTML = number1+" - "+number2;
+                    document.getElementById("number_1").value = "";
+                    document.getElementById("number_2").value = "";
+                }
+            }
+            function mul(){
+                number1 = Number(document.getElementById("number_1").value);
+                number2 = Number(document.getElementById("number_2").value);
+                if(number1 == ""){
+
+                }else if(number2 == ""){
+
+                }else{
+                    document.getElementById("displayer").style.display="block";
+                    check = number1 * number2;
+                    console.log(check);
+                    document.getElementById("question").innerHTML = number1+" x "+number2;
+                    document.getElementById("number_1").value = "";
+                    document.getElementById("number_2").value = "";
+                }
+            }
+            function div(){
+                number1 = Number(document.getElementById("number_1").value);
+                number2 = Number(document.getElementById("number_2").value);
+                if(number1 == ""){
+
+                }else if(number2 == ""){
+
+                }else{
+                    document.getElementById("displayer").style.display="block";
+                    check = number1 / number2;
+                    console.log(check);
+                    document.getElementById("question").innerHTML = number1+" ÷ "+number2;
+                    document.getElementById("number_1").value = "";
+                    document.getElementById("number_2").value = "";
+                }
+            }
+        </script>
+    </body>
+</html>
